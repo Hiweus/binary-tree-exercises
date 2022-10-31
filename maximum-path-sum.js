@@ -37,7 +37,6 @@ function maximumPathSum(node) {
 }
 
 const root = buildTree()
-const SEARCH = 111
 console.log(maximumPathSum(root))
 
 
