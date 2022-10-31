@@ -24,14 +24,16 @@ function buildTree() {
 }
 
 function maximumPathSum(node) {
-  if(node === null) return 0
+  if(node === null) return -Infinity
+  const isLeaf = node.left === null && node.right === null
+  if(isLeaf) return Number(node.val)
 
   const left = maximumPathSum(node.left)
   const right = maximumPathSum(node.right)
+
   const maximum = left > right ? left : right
 
   return Number(node.val) + maximum
-  
 }
 
 const root = buildTree()
